@@ -74,7 +74,7 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
     --without-sqlite3 \
     --without-libxml2 \
     --with-libexpat \
-    --without-libz \
+    --with-libz \
     --without-libgmp \
     --without-libssh2 \
     --without-libgcrypt \
