@@ -63,15 +63,15 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
     --prefix=$PREFIX \
     --without-included-gettext \
     --disable-nls \
-    --with-libcares \
+    --without-libcares \
     --without-gnutls \
     --without-openssl \
-    --with-sqlite3 \
+    --without-sqlite3 \
     --without-libxml2 \
     --with-libexpat \
     --with-libz \
-    --with-libgmp \
-    --with-libssh2 \
+    --without-libgmp \
+    --without-libssh2 \
     --without-libgcrypt \
     --without-libnettle \
     --with-cppunit-prefix=$PREFIX \
