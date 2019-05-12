@@ -63,7 +63,6 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
     --prefix=$PREFIX \
     --without-included-gettext \
     --disable-nls \
-    --disable-epoll \
     --disable-bittorrent \
     --disable-websocket \
     --without-libcares \
