@@ -52,8 +52,12 @@ RUN curl -L -O https://www.openssl.org/source/openssl-1.0.2r.tar.gz && \
 #        CFLAGS="-mtune=generic -O2 -g0" && \
 #    make install
 
+# config see https://wiki.openssl.org/index.php/Compilation_and_Installation#Configure_.26_Config
 RUN tar zxvf openssl-1.0.2r.tar.gz && \
   cd openssl-1.0.2r/ && \
+  sed -i.bak "s/\-O3/\-Os/g" Configure && \
+  sed -i.bak "s/\-O3/\-Os/g" Makefile.org && \
+  sed -i.bak2 "s/CFLAG= -O/CFLAG= -Os/g" Makefile.org && \
   ./Configure --cross-compile-prefix=$HOST- --prefix=/usr/local/$HOST $OpenSSLTaget && \
   make && \
   make test && \
