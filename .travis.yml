@@ -44,6 +44,7 @@ before_script:
   - automake
   - autoconf
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./configure --without-openssl --without-gnutls --with-appletls --disable-nls CPPFLAGS=-fsanitize=address LDFLAGS=-fsanitize=address; fi
-  - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then ./configure CPPFLAGS=-fsanitize=address LDFLAGS="-fsanitize=address -fuse-ld=gold"; fi
+  #- if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then ./configure CPPFLAGS=-fsanitize=address LDFLAGS="-fsanitize=address -fuse-ld=gold"; fi
+  - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then ./configure CPPFLAGS="-Os -fsanitize=address" CXXFLAGS="-Os" LDFLAGS="-fsanitize=address -fuse-ld=gold"; fi
 script:
   - make CC="ccache $CC" CXX="ccache $CXX" check
