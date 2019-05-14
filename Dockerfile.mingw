@@ -53,7 +53,7 @@ RUN curl -L -O https://www.openssl.org/source/openssl-1.0.2o.tar.gz && \
 
 RUN tar zxvf openssl-1.0.2o.tar.gz && \
   cd openssl-1.0.2o/ && \
-  ./Configure --cross-compile-prefix=$HOST- --prefix=/usr/local/$HOST mingw CFLAGS="-Os" && \
+  ./Configure --cross-compile-prefix=$HOST- --prefix=/usr/local/$HOST mingw && \
   make && \
   make install
 
