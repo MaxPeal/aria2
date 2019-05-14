@@ -34,8 +34,9 @@ RUN curl -L -O https://gmplib.org/download/gmp/gmp-6.1.2.tar.lz && \
     curl -L -O https://www.sqlite.org/2019/sqlite-autoconf-3280000.tar.gz && \
     curl -L -O http://zlib.net/zlib-1.2.11.tar.gz && \
     curl -L -O https://c-ares.haxx.se/download/c-ares-1.14.0.tar.gz && \
-    curl -L -O http://libssh2.org/download/libssh2-1.8.0.tar.gz && \
-    curl -L -O https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz
+    curl -L -O http://libssh2.org/download/libssh2-1.8.0.tar.gz
+    ###&& \
+    ###curl -L -O https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz
 
 ####RUN tar xf gmp-6.1.2.tar.lz && \
 #    cd gmp-6.1.2 && \
@@ -108,7 +109,7 @@ RUN tar xf zlib-1.2.11.tar.gz && \
 #        LIBS="-lws2_32" && \
 #    make install
 
-RUN tar xf upx-3.95-amd64_linux.tar.xz
+##RUN tar xf upx-3.95-amd64_linux.tar.xz
 
 ADD https://api.github.com/repos/MaxPeal/aria2/git/refs/heads/metalink-minimal version.json
 RUN git clone --branch=metalink-minimal https://github.com/MaxPeal/aria2 && \
