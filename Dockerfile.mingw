@@ -56,6 +56,7 @@ RUN tar zxvf openssl-1.0.2r.tar.gz && \
   cd openssl-1.0.2r/ && \
   ./Configure --cross-compile-prefix=$HOST- --prefix=/usr/local/$HOST $OpenSSLTaget && \
   make && \
+  make test && \
   make install
 
 RUN tar xf expat-2.2.6.tar.bz2 && \
