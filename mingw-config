@@ -66,9 +66,9 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
     --disable-websocket \
     --without-libcares \
     --without-appletls \
-    --with-wintls \
+    --without-wintls \
     --without-gnutls \
-    --without-openssl \
+    --with-openssl \
     --without-sqlite3 \
     --without-libxml2 \
     --with-libexpat \
