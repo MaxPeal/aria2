@@ -114,4 +114,4 @@ ADD https://api.github.com/repos/MaxPeal/aria2/git/refs/heads/metalink-minimal v
 RUN git clone --branch=metalink-minimal https://github.com/MaxPeal/aria2 && \
     cd aria2 && autoreconf -i && ./mingw-config && make && \
     $HOST-strip src/aria2c.exe && \
-    upx-3.95-amd64_linux\upx -kv --ultra-brute aria2c.exe
+    upx-3.95-amd64_linux/upx -kv --ultra-brute aria2c.exe
