@@ -80,5 +80,7 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
     --with-cppunit-prefix=$PREFIX \
     ARIA2_STATIC=yes \
     CPPFLAGS="-Os -I$PREFIX/include" \
+    CXXFLAGS="-g -Os" \
+    CFLAGS="-g -Os" \
     LDFLAGS="-L$PREFIX/lib" \
     PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig"
