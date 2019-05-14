@@ -18,6 +18,7 @@ MAINTAINER Tatsuhiro Tsujikawa
 
 # Change HOST to x86_64-w64-mingw32 to build 64-bit binary
 ENV HOST i686-w64-mingw32
+ENV OpenSSLTaget mingw
 
 # It would be better to use nearest ubuntu archive mirror for faster
 # downloads.
@@ -53,7 +54,7 @@ RUN curl -L -O https://www.openssl.org/source/openssl-1.0.2o.tar.gz && \
 
 RUN tar zxvf openssl-1.0.2o.tar.gz && \
   cd openssl-1.0.2o/ && \
-  ./Configure --cross-compile-prefix=$HOST- --prefix=/usr/local/$HOST mingw && \
+  ./Configure --cross-compile-prefix=$HOST- --prefix=/usr/local/$HOST $OpenSSLTaget && \
   make && \
   make install
 
