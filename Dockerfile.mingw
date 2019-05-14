@@ -11,8 +11,8 @@
 # $ sudo docker cp $id:/aria2/src/aria2c.exe <dest>
 # $ sudo docker rm -v $id
 
-#FROM ubuntu:16.04
-FROM ubuntu:18.04
+FROM ubuntu:16.04
+#FROM ubuntu:18.04
 
 MAINTAINER Tatsuhiro Tsujikawa
 
