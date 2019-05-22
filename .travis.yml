@@ -48,3 +48,13 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then ./configure CPPFLAGS="-Os -fsanitize=address" CXXFLAGS="-Os" LDFLAGS="-fsanitize=address -fuse-ld=gold"; fi
 script:
   - make CC="ccache $CC" CXX="ccache $CXX" check
+before_deploy: "echo 'ready?'"
+deploy:
+  provider: bintray
+  file: "Path to a descriptor file, containing information for the Bintray upload"
+  user: "maxpeal"
+  key: "secure: MVdHze4O2z7OHuCdql7IclY1T+nk9S5UATK5u7FdavsnoLVfIvqHqmVk+BeoiAhAuwtnpB7xrYzdUdBGaA7HquMF5+Iyd+oztIMpAgdYJHW6A54s3QsSswVENTAeQl4P+IQ6itwAEUDy19uzi0Dw+zZ14M7c2oVVA5gLgHNIMwWtTY/0RUh4cANFY14E8uI36gkhcCdmwGvaUQZ9MG+GdHMwxdm5MF51xYN4146XOc+TL/8IN5f5BwFvlFCZ1jm7aEsilMeXKa6ge70cG1dLOJjnkCZrlWcpxfFotDchUUS/g5U5tGYUEEaPE6qw/q6EUPlp2so+ezy5ho0PjkQ5iuqOqJihmUBxzhrrYSqp+MpOF6InNMD1nm1Y+ZjC9k9KymxbPHlJCIuJspJMv4y18FREzVCrOZY+FZ8iYs16dPI4fz6fA1Ah8lXJ+/5RMLcKj31rBFr/+mu/f1Jzq6tF6lUB8it/tjeGSwZZKPetTQW/aSh92tRaX4o7858Ixen33MpSc80WI7bHviR39Fz8CDOGHtlhFAkQO3wlz60VSIIRaqfLX+Dj/hwScaYWierFQdfooO5DtHA0CiEJaMRPCKafoT4XPgEFUu94GeIonHGf/TEpBL9Hjcs3JrsiOLMMW38SNzbmRmi0fw1TgkFo6LEacSvDtG829zpLrI8ohFg="
+  #passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
+  skip_cleanup: true # to upload artifacts created during the build
+  on:
+    all_branches: true
